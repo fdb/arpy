@@ -15,42 +15,23 @@ struct ContentView: View {
         .onAppear {
             keyboardMonitor.startMonitoring()
             keyboardMonitor.onShiftChanged = { isDown in
-                if isDown {
-                    viewModel.state.isMelodicShiftActive = true
-                } else {
-                    viewModel.state.isMelodicShiftActive = false
+                viewModel.state.isMelodicShiftActive = isDown
+            }
+            keyboardMonitor.onKeyDown = { keyCode in
+                switch keyCode {
+                case 49: viewModel.togglePlayStop()  // Space
+                case 18: viewModel.padPressed(1)     // 1
+                case 19: viewModel.padPressed(2)     // 2
+                case 20: viewModel.padPressed(3)     // 3
+                case 21: viewModel.padPressed(4)     // 4
+                case 46: viewModel.toggleMute()      // M
+                default: break
                 }
             }
         }
         .onDisappear {
             keyboardMonitor.stopMonitoring()
         }
-        .onKeyPress(.space) {
-            viewModel.togglePlayStop()
-            return .handled
-        }
-        .onKeyPress("1") {
-            viewModel.padPressed(1)
-            return .handled
-        }
-        .onKeyPress("2") {
-            viewModel.padPressed(2)
-            return .handled
-        }
-        .onKeyPress("3") {
-            viewModel.padPressed(3)
-            return .handled
-        }
-        .onKeyPress("4") {
-            viewModel.padPressed(4)
-            return .handled
-        }
-        .onKeyPress("m") {
-            viewModel.toggleMute()
-            return .handled
-        }
-        .focusable()
-        .focusEffectDisabled()
     }
 }
 

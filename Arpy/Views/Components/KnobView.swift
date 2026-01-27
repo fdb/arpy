@@ -8,6 +8,9 @@ struct KnobView: View {
 
     private let knobSize: CGFloat = 48
 
+    /// Value at the start of a drag gesture.
+    @State private var dragStartValue: Double = 0
+
     var body: some View {
         VStack(spacing: 4) {
             Text(label)
@@ -34,12 +37,24 @@ struct KnobView: View {
                     .frame(width: 4, height: 4)
             }
             .gesture(
-                DragGesture(minimumDistance: 1)
+                DragGesture(minimumDistance: 2)
                     .onChanged { gesture in
-                        let delta = -gesture.translation.height / 150.0
-                        value = max(0, min(1, value + delta))
+                        // Drag up to increase, down to decrease
+                        // 300pt of vertical travel = full 0→1 range
+                        let delta = -gesture.translation.height / 300.0
+                        value = max(0, min(1, dragStartValue + delta))
+                    }
+                    .onEnded { _ in
+                        dragStartValue = value
                     }
             )
+            .onAppear {
+                dragStartValue = value
+            }
+            .onChange(of: value) { _, newValue in
+                // Keep in sync when value changes externally (e.g. track switch)
+                dragStartValue = newValue
+            }
 
             Text(displayValue)
                 .font(.system(.caption2, design: .monospaced))
