@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DF5ECBC77180FD42FD06BC4 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD48556A40774F83B092EFD /* PersistenceTests.swift */; };
+		10EA9C1A0EB3B5E1FDBD268A /* StepSequencerGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA1501C1A303EF277EB01D /* StepSequencerGrid.swift */; };
+		26709D5BF8149B4E0C2CDFA8 /* MIDIControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066214B538E59F2022D88C44 /* MIDIControllerService.swift */; };
+		2792A1D03A81D38EE5222A6A /* EuclideanEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258F5FBCB936C74102D728A2 /* EuclideanEngineTests.swift */; };
+		2A4A9289E28B7BF3EA8AC27E /* ClockEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965095811925A0AC9E6D3BD9 /* ClockEngineTests.swift */; };
+		2B31B1E4A8454B0DA2001381 /* EuclideanPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431E908F4309665A745A1C1 /* EuclideanPattern.swift */; };
+		2DEF389A63B58BFAE6CDF39B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D710EEC692FE7500EE49A7EF /* Colors.swift */; };
+		3635DA790BE64002FD1507A1 /* SequencerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56AFFA04AE9662A4DC0E22F /* SequencerViewModel.swift */; };
+		4350DC05DD9DD467DA1F17A0 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0606B33F652F38A7D8152B23 /* Track.swift */; };
+		55211973072CB1DD10DE71F7 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C184FBD6F1F01F7B8D571B0B /* TrackRow.swift */; };
+		5993F73ADDD2A3679B8C0025 /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAC6887DB920D9FE4899FD /* KeyboardMonitor.swift */; };
+		6A48A37C8012C2504E66EFD3 /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C3764AE6360DAD184178E /* StepCell.swift */; };
+		6B40048950330C3892A8CDC8 /* TransportBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7E2B691F93450B9B825EA /* TransportBar.swift */; };
+		72F59446ACBF114B1318137E /* EuclideanEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75BF93C9D5E64F8D2173EC /* EuclideanEngine.swift */; };
+		76FB092E23797865DA01805E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC7DA5D7A73756DAD11D195 /* CoreMIDI.framework */; };
+		780F177131EED7736F9F7D36 /* ScaleEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F14D1DC3995F699D6DFB50 /* ScaleEngine.swift */; };
+		8922649DF3A6900E14BBA0D2 /* MIDIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A746129EC9CCFA8DF3AE82 /* MIDIEngineTests.swift */; };
+		8C8EFF2606863D1C8515B4AA /* SequencerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCB75C19861CC28899F672 /* SequencerState.swift */; };
+		919772E81044F46F885F5935 /* MIDIInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91E50C0124E21DAB891F295 /* MIDIInputService.swift */; };
+		94FC6C324A367B5599FE2199 /* ArpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084153F4ACC4C15A1B4A028F /* ArpyUITests.swift */; };
+		954108DBA7BCCC6EF28372A1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E877281B5FAFF1DA0EAC5 /* PersistenceController.swift */; };
+		A03407825F0E8A788C071E20 /* ArpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36092C5845F809227806687 /* ArpyTests.swift */; };
+		AB7BC9495777B0D4A6994D6B /* MIDIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD541BAF3D2FA3AFE5ED5D5B /* MIDIEngine.swift */; };
+		ADD70AE240BD81C3B46895F9 /* MelodicConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD721E036CC7CE8A4CB78844 /* MelodicConfig.swift */; };
+		AFBBF3D5B4F97955E254F89C /* SequencerStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EA82D1DD4071642DD437E /* SequencerStateTests.swift */; };
+		BE1AB396DD1FD27DB1811499 /* MIDIOutputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA6E05E50892248EA44FB /* MIDIOutputService.swift */; };
+		BE9F19F3A2D6A490776FE407 /* MIDIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F92B1FEEE985531F1A159E /* MIDIMessage.swift */; };
+		C30F75F674A71ABD77B94F22 /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9680E21B4C03F3497312B /* ControllerView.swift */; };
+		C8DDC239E9C70417F6D4A4C8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9114B1ADA08B5989DDED1DB4 /* KnobView.swift */; };
+		CA2BDDC4F1CBFA32C0E7946A /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736FDC8185592B9D293908F /* Division.swift */; };
+		D53F3A000D712CFC2696F459 /* ClockSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6EEF8ED31D2F107FE8B10 /* ClockSource.swift */; };
+		D6941658CBEA50A8AFC43BF2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908C8B06B5EFB7B7CEAA81BB /* Note.swift */; };
+		D754DEDCE52FF99061F5A370 /* ArpyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B907C93118982C15BE4CE3 /* ArpyApp.swift */; };
+		D8DDFBE16DF04B7BA991947D /* VoicingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD659258FA087AE3F37AD51F /* VoicingStyle.swift */; };
+		E23AAC4E76C074E191B78809 /* RepeatEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A49197CA4883E62286A1D /* RepeatEngine.swift */; };
+		EB6418A198166B7C6F198D35 /* PhraseEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D9BC509DCDA9400E5C257 /* PhraseEngine.swift */; };
+		F040B297F87DD78DECA75FCF /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC0BB3C595C07713CABF79 /* Scale.swift */; };
+		F0CE6ABB74DA2BE3858E7B10 /* ClockEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A05772059572EA81322F2B /* ClockEngine.swift */; };
+		F0D1D3445862673E057C5247 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D2E62A2537C04096A8169 /* ContentView.swift */; };
+		F8B8D51A9C8B813199C21AD6 /* PhraseShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFADAEBCE54057FEE50F56 /* PhraseShape.swift */; };
+		FB02516128D91DA36C400E5E /* PadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F92D2A3F95623B1221C66 /* PadView.swift */; };
+		FC8556530D27DF28F77FBD8C /* RepeatEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6929DB1D7785CFB4905F84B9 /* RepeatEngineTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA7FFE2DA1C6D94641F8FD0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13563F3A76001D432957095E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4D214385D2B4CE9B68EB36A;
+			remoteInfo = Arpy;
+		};
+		FCFE8A776482F7A78CC4B1BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13563F3A76001D432957095E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4D214385D2B4CE9B68EB36A;
+			remoteInfo = Arpy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0606B33F652F38A7D8152B23 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		066214B538E59F2022D88C44 /* MIDIControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIControllerService.swift; sourceTree = "<group>"; };
+		084153F4ACC4C15A1B4A028F /* ArpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArpyUITests.swift; sourceTree = "<group>"; };
+		150E877281B5FAFF1DA0EAC5 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		1977F3BDA8E0036CA60D0643 /* ArpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23AAC6887DB920D9FE4899FD /* KeyboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
+		258F5FBCB936C74102D728A2 /* EuclideanEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclideanEngineTests.swift; sourceTree = "<group>"; };
+		30A746129EC9CCFA8DF3AE82 /* MIDIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEngineTests.swift; sourceTree = "<group>"; };
+		369F92D2A3F95623B1221C66 /* PadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadView.swift; sourceTree = "<group>"; };
+		3EE7E2B691F93450B9B825EA /* TransportBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportBar.swift; sourceTree = "<group>"; };
+		40BFADAEBCE54057FEE50F56 /* PhraseShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseShape.swift; sourceTree = "<group>"; };
+		42F92B1FEEE985531F1A159E /* MIDIMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIMessage.swift; sourceTree = "<group>"; };
+		48F9680E21B4C03F3497312B /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
+		51DA1501C1A303EF277EB01D /* StepSequencerGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerGrid.swift; sourceTree = "<group>"; };
+		573A49197CA4883E62286A1D /* RepeatEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatEngine.swift; sourceTree = "<group>"; };
+		5BC7DA5D7A73756DAD11D195 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		634EA82D1DD4071642DD437E /* SequencerStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerStateTests.swift; sourceTree = "<group>"; };
+		657DA6E05E50892248EA44FB /* MIDIOutputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIOutputService.swift; sourceTree = "<group>"; };
+		6736FDC8185592B9D293908F /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
+		6929DB1D7785CFB4905F84B9 /* RepeatEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatEngineTests.swift; sourceTree = "<group>"; };
+		69DCB75C19861CC28899F672 /* SequencerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerState.swift; sourceTree = "<group>"; };
+		726C3764AE6360DAD184178E /* StepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
+		72F14D1DC3995F699D6DFB50 /* ScaleEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEngine.swift; sourceTree = "<group>"; };
+		908C8B06B5EFB7B7CEAA81BB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		9114B1ADA08B5989DDED1DB4 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
+		915D9BC509DCDA9400E5C257 /* PhraseEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseEngine.swift; sourceTree = "<group>"; };
+		91B907C93118982C15BE4CE3 /* ArpyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArpyApp.swift; sourceTree = "<group>"; };
+		965095811925A0AC9E6D3BD9 /* ClockEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockEngineTests.swift; sourceTree = "<group>"; };
+		A5A05772059572EA81322F2B /* ClockEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockEngine.swift; sourceTree = "<group>"; };
+		AC75BF93C9D5E64F8D2173EC /* EuclideanEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclideanEngine.swift; sourceTree = "<group>"; };
+		B1C6EEF8ED31D2F107FE8B10 /* ClockSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSource.swift; sourceTree = "<group>"; };
+		B46D9EB80AC29B6B5BC68D02 /* ArpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73EAA028524AD3BA82268F4 /* Arpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91E50C0124E21DAB891F295 /* MIDIInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIInputService.swift; sourceTree = "<group>"; };
+		BD721E036CC7CE8A4CB78844 /* MelodicConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodicConfig.swift; sourceTree = "<group>"; };
+		BFD48556A40774F83B092EFD /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		C184FBD6F1F01F7B8D571B0B /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
+		C3EC0BB3C595C07713CABF79 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		CD659258FA087AE3F37AD51F /* VoicingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicingStyle.swift; sourceTree = "<group>"; };
+		D710EEC692FE7500EE49A7EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DD541BAF3D2FA3AFE5ED5D5B /* MIDIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEngine.swift; sourceTree = "<group>"; };
+		DF9D2E62A2537C04096A8169 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E36092C5845F809227806687 /* ArpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArpyTests.swift; sourceTree = "<group>"; };
+		F431E908F4309665A745A1C1 /* EuclideanPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclideanPattern.swift; sourceTree = "<group>"; };
+		F56AFFA04AE9662A4DC0E22F /* SequencerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E976610DBCE99FA14C5870D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76FB092E23797865DA01805E /* CoreMIDI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		048ED014709C0586E6D45267 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D710EEC692FE7500EE49A7EF /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		232927461413BF37C82DEB4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BC7DA5D7A73756DAD11D195 /* CoreMIDI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		235BB1F66D1216761242163A /* ArpyTests */ = {
+			isa = PBXGroup;
+			children = (
+				E36092C5845F809227806687 /* ArpyTests.swift */,
+				965095811925A0AC9E6D3BD9 /* ClockEngineTests.swift */,
+				258F5FBCB936C74102D728A2 /* EuclideanEngineTests.swift */,
+				30A746129EC9CCFA8DF3AE82 /* MIDIEngineTests.swift */,
+				BFD48556A40774F83B092EFD /* PersistenceTests.swift */,
+				6929DB1D7785CFB4905F84B9 /* RepeatEngineTests.swift */,
+				634EA82D1DD4071642DD437E /* SequencerStateTests.swift */,
+			);
+			path = ArpyTests;
+			sourceTree = "<group>";
+		};
+		48131E1282B3822E8E4B94A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B73EAA028524AD3BA82268F4 /* Arpy.app */,
+				1977F3BDA8E0036CA60D0643 /* ArpyTests.xctest */,
+				B46D9EB80AC29B6B5BC68D02 /* ArpyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FBF05ABA0E496063BEC4201 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				48F9680E21B4C03F3497312B /* ControllerView.swift */,
+				23AAC6887DB920D9FE4899FD /* KeyboardMonitor.swift */,
+				9114B1ADA08B5989DDED1DB4 /* KnobView.swift */,
+				369F92D2A3F95623B1221C66 /* PadView.swift */,
+				726C3764AE6360DAD184178E /* StepCell.swift */,
+				51DA1501C1A303EF277EB01D /* StepSequencerGrid.swift */,
+				C184FBD6F1F01F7B8D571B0B /* TrackRow.swift */,
+				3EE7E2B691F93450B9B825EA /* TransportBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7972F020497BC6A2216E6137 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				91B907C93118982C15BE4CE3 /* ArpyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B98CA5BAF9CD8448E286223 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FBF05ABA0E496063BEC4201 /* Components */,
+				C7379C544565A83E8F54BE8D /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5A84B8E6850E67312E7832C /* Arpy */ = {
+			isa = PBXGroup;
+			children = (
+				7972F020497BC6A2216E6137 /* App */,
+				D4530EAFEBAD1E99F4587791 /* Core */,
+				048ED014709C0586E6D45267 /* Extensions */,
+				D2F9B0A029F52A0E68222369 /* Models */,
+				B849C953DFB58564742D9571 /* ViewModels */,
+				8B98CA5BAF9CD8448E286223 /* Views */,
+			);
+			path = Arpy;
+			sourceTree = "<group>";
+		};
+		B849C953DFB58564742D9571 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F56AFFA04AE9662A4DC0E22F /* SequencerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C205B1E488A403B462EF5B7B /* Euclidean */ = {
+			isa = PBXGroup;
+			children = (
+				AC75BF93C9D5E64F8D2173EC /* EuclideanEngine.swift */,
+				573A49197CA4883E62286A1D /* RepeatEngine.swift */,
+			);
+			path = Euclidean;
+			sourceTree = "<group>";
+		};
+		C7379C544565A83E8F54BE8D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DF9D2E62A2537C04096A8169 /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D2F9B0A029F52A0E68222369 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1C6EEF8ED31D2F107FE8B10 /* ClockSource.swift */,
+				6736FDC8185592B9D293908F /* Division.swift */,
+				F431E908F4309665A745A1C1 /* EuclideanPattern.swift */,
+				BD721E036CC7CE8A4CB78844 /* MelodicConfig.swift */,
+				908C8B06B5EFB7B7CEAA81BB /* Note.swift */,
+				40BFADAEBCE54057FEE50F56 /* PhraseShape.swift */,
+				C3EC0BB3C595C07713CABF79 /* Scale.swift */,
+				69DCB75C19861CC28899F672 /* SequencerState.swift */,
+				0606B33F652F38A7D8152B23 /* Track.swift */,
+				CD659258FA087AE3F37AD51F /* VoicingStyle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4530EAFEBAD1E99F4587791 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				150E877281B5FAFF1DA0EAC5 /* PersistenceController.swift */,
+				DBE6287C675E297D69FC81B7 /* Clock */,
+				C205B1E488A403B462EF5B7B /* Euclidean */,
+				FDF52214287BD17BDA826BAB /* MIDI */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DBE6287C675E297D69FC81B7 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				A5A05772059572EA81322F2B /* ClockEngine.swift */,
+			);
+			path = Clock;
+			sourceTree = "<group>";
+		};
+		E901B5FE8AE824D7CDC61871 /* ArpyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				084153F4ACC4C15A1B4A028F /* ArpyUITests.swift */,
+			);
+			path = ArpyUITests;
+			sourceTree = "<group>";
+		};
+		F8CA48FD3B2A55A17D09C60F = {
+			isa = PBXGroup;
+			children = (
+				A5A84B8E6850E67312E7832C /* Arpy */,
+				235BB1F66D1216761242163A /* ArpyTests */,
+				E901B5FE8AE824D7CDC61871 /* ArpyUITests */,
+				232927461413BF37C82DEB4E /* Frameworks */,
+				48131E1282B3822E8E4B94A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF52214287BD17BDA826BAB /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				066214B538E59F2022D88C44 /* MIDIControllerService.swift */,
+				DD541BAF3D2FA3AFE5ED5D5B /* MIDIEngine.swift */,
+				B91E50C0124E21DAB891F295 /* MIDIInputService.swift */,
+				42F92B1FEEE985531F1A159E /* MIDIMessage.swift */,
+				657DA6E05E50892248EA44FB /* MIDIOutputService.swift */,
+				915D9BC509DCDA9400E5C257 /* PhraseEngine.swift */,
+				72F14D1DC3995F699D6DFB50 /* ScaleEngine.swift */,
+			);
+			path = MIDI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62653388F13122D9110B0939 /* ArpyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C92F75582CEE6ED5E87384E7 /* Build configuration list for PBXNativeTarget "ArpyTests" */;
+			buildPhases = (
+				FF3BF7C6527F2C3419BF2C0E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2CE0D77C516261CC537EFBA /* PBXTargetDependency */,
+			);
+			name = ArpyTests;
+			packageProductDependencies = (
+			);
+			productName = ArpyTests;
+			productReference = 1977F3BDA8E0036CA60D0643 /* ArpyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4D214385D2B4CE9B68EB36A /* Arpy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DB3B23CDAF113737678AFF7 /* Build configuration list for PBXNativeTarget "Arpy" */;
+			buildPhases = (
+				1D25A53692879557E748060C /* Sources */,
+				6E976610DBCE99FA14C5870D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arpy;
+			packageProductDependencies = (
+			);
+			productName = Arpy;
+			productReference = B73EAA028524AD3BA82268F4 /* Arpy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA65CA470E041E7C2AE24E4B /* ArpyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AD4A287262E2523C885BA30 /* Build configuration list for PBXNativeTarget "ArpyUITests" */;
+			buildPhases = (
+				CDA9BE19169B5C5DD714B15F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				898AD8616AAA2574D241DC9B /* PBXTargetDependency */,
+			);
+			name = ArpyUITests;
+			packageProductDependencies = (
+			);
+			productName = ArpyUITests;
+			productReference = B46D9EB80AC29B6B5BC68D02 /* ArpyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13563F3A76001D432957095E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FA65CA470E041E7C2AE24E4B = {
+						TestTargetID = E4D214385D2B4CE9B68EB36A;
+					};
+				};
+			};
+			buildConfigurationList = B250AE3B8A0E218517A45DC4 /* Build configuration list for PBXProject "Arpy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F8CA48FD3B2A55A17D09C60F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4D214385D2B4CE9B68EB36A /* Arpy */,
+				62653388F13122D9110B0939 /* ArpyTests */,
+				FA65CA470E041E7C2AE24E4B /* ArpyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D25A53692879557E748060C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D754DEDCE52FF99061F5A370 /* ArpyApp.swift in Sources */,
+				F0CE6ABB74DA2BE3858E7B10 /* ClockEngine.swift in Sources */,
+				D53F3A000D712CFC2696F459 /* ClockSource.swift in Sources */,
+				2DEF389A63B58BFAE6CDF39B /* Colors.swift in Sources */,
+				F0D1D3445862673E057C5247 /* ContentView.swift in Sources */,
+				C30F75F674A71ABD77B94F22 /* ControllerView.swift in Sources */,
+				CA2BDDC4F1CBFA32C0E7946A /* Division.swift in Sources */,
+				72F59446ACBF114B1318137E /* EuclideanEngine.swift in Sources */,
+				2B31B1E4A8454B0DA2001381 /* EuclideanPattern.swift in Sources */,
+				5993F73ADDD2A3679B8C0025 /* KeyboardMonitor.swift in Sources */,
+				C8DDC239E9C70417F6D4A4C8 /* KnobView.swift in Sources */,
+				26709D5BF8149B4E0C2CDFA8 /* MIDIControllerService.swift in Sources */,
+				AB7BC9495777B0D4A6994D6B /* MIDIEngine.swift in Sources */,
+				919772E81044F46F885F5935 /* MIDIInputService.swift in Sources */,
+				BE9F19F3A2D6A490776FE407 /* MIDIMessage.swift in Sources */,
+				BE1AB396DD1FD27DB1811499 /* MIDIOutputService.swift in Sources */,
+				ADD70AE240BD81C3B46895F9 /* MelodicConfig.swift in Sources */,
+				D6941658CBEA50A8AFC43BF2 /* Note.swift in Sources */,
+				FB02516128D91DA36C400E5E /* PadView.swift in Sources */,
+				954108DBA7BCCC6EF28372A1 /* PersistenceController.swift in Sources */,
+				EB6418A198166B7C6F198D35 /* PhraseEngine.swift in Sources */,
+				F8B8D51A9C8B813199C21AD6 /* PhraseShape.swift in Sources */,
+				E23AAC4E76C074E191B78809 /* RepeatEngine.swift in Sources */,
+				F040B297F87DD78DECA75FCF /* Scale.swift in Sources */,
+				780F177131EED7736F9F7D36 /* ScaleEngine.swift in Sources */,
+				8C8EFF2606863D1C8515B4AA /* SequencerState.swift in Sources */,
+				3635DA790BE64002FD1507A1 /* SequencerViewModel.swift in Sources */,
+				6A48A37C8012C2504E66EFD3 /* StepCell.swift in Sources */,
+				10EA9C1A0EB3B5E1FDBD268A /* StepSequencerGrid.swift in Sources */,
+				4350DC05DD9DD467DA1F17A0 /* Track.swift in Sources */,
+				55211973072CB1DD10DE71F7 /* TrackRow.swift in Sources */,
+				6B40048950330C3892A8CDC8 /* TransportBar.swift in Sources */,
+				D8DDFBE16DF04B7BA991947D /* VoicingStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA9BE19169B5C5DD714B15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94FC6C324A367B5599FE2199 /* ArpyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF3BF7C6527F2C3419BF2C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03407825F0E8A788C071E20 /* ArpyTests.swift in Sources */,
+				2A4A9289E28B7BF3EA8AC27E /* ClockEngineTests.swift in Sources */,
+				2792A1D03A81D38EE5222A6A /* EuclideanEngineTests.swift in Sources */,
+				8922649DF3A6900E14BBA0D2 /* MIDIEngineTests.swift in Sources */,
+				0DF5ECBC77180FD42FD06BC4 /* PersistenceTests.swift in Sources */,
+				FC8556530D27DF28F77FBD8C /* RepeatEngineTests.swift in Sources */,
+				AFBBF3D5B4F97955E254F89C /* SequencerStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		898AD8616AAA2574D241DC9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4D214385D2B4CE9B68EB36A /* Arpy */;
+			targetProxy = BA7FFE2DA1C6D94641F8FD0F /* PBXContainerItemProxy */;
+		};
+		B2CE0D77C516261CC537EFBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4D214385D2B4CE9B68EB36A /* Arpy */;
+			targetProxy = FCFE8A776482F7A78CC4B1BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		033133CB53397E9685905DF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.ArpyUITests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_TARGET_NAME = Arpy;
+			};
+			name = Release;
+		};
+		080E46B5B1B252593B84B2C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.Arpy;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		38DA60469D40E0434D04F065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.ArpyTests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arpy.app/Contents/MacOS/Arpy";
+			};
+			name = Release;
+		};
+		415A6D671668E2BB4D7C06B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A7C7FC940896D34670D8FFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.ArpyTests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arpy.app/Contents/MacOS/Arpy";
+			};
+			name = Debug;
+		};
+		B9FF7C53BC5E20A2116BC5B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BDE85EBAE1D69350F7397ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.Arpy;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		DDFAF883C49BDEFF1170B446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arpy.ArpyUITests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_TARGET_NAME = Arpy;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AD4A287262E2523C885BA30 /* Build configuration list for PBXNativeTarget "ArpyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFAF883C49BDEFF1170B446 /* Debug */,
+				033133CB53397E9685905DF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8DB3B23CDAF113737678AFF7 /* Build configuration list for PBXNativeTarget "Arpy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDE85EBAE1D69350F7397ED2 /* Debug */,
+				080E46B5B1B252593B84B2C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B250AE3B8A0E218517A45DC4 /* Build configuration list for PBXProject "Arpy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				415A6D671668E2BB4D7C06B6 /* Debug */,
+				B9FF7C53BC5E20A2116BC5B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C92F75582CEE6ED5E87384E7 /* Build configuration list for PBXNativeTarget "ArpyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7C7FC940896D34670D8FFA9 /* Debug */,
+				38DA60469D40E0434D04F065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13563F3A76001D432957095E /* Project object */;
+}
