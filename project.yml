@@ -1,0 +1,64 @@
+name: Arpy
+options:
+  bundleIdPrefix: com.arpy
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  minimumXcodeGenVersion: "2.30"
+
+targets:
+  Arpy:
+    type: application
+    platform: macOS
+    sources:
+      - Arpy
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arpy.Arpy
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.music"
+        GENERATE_INFOPLIST_FILE: "YES"
+    dependencies:
+      - sdk: CoreMIDI.framework
+
+  ArpyTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - ArpyTests
+    dependencies:
+      - target: Arpy
+    settings:
+      base:
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: "YES"
+
+  ArpyUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - ArpyUITests
+    dependencies:
+      - target: Arpy
+    settings:
+      base:
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: "YES"
+
+schemes:
+  Arpy:
+    build:
+      targets:
+        Arpy: all
+        ArpyTests: [test]
+        ArpyUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - ArpyTests
+        - ArpyUITests
