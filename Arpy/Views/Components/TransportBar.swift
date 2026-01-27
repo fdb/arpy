@@ -27,15 +27,22 @@ struct TransportBar: View {
 
             Divider().frame(height: 24)
 
-            // Clock source
-            HStack(spacing: 4) {
-                Image(systemName: viewModel.state.clockSource == .internal
-                    ? "clock.fill"
-                    : "clock.arrow.2.circlepath")
-                    .foregroundColor(.secondary)
-                Text(viewModel.state.clockSource == .internal ? "INT" : "EXT")
-                    .font(.system(.caption, design: .monospaced))
+            // Clock source (click to toggle)
+            Button(action: {
+                viewModel.state.clockSource = viewModel.state.clockSource == .internal
+                    ? .external : .internal
+            }) {
+                HStack(spacing: 4) {
+                    Image(systemName: viewModel.state.clockSource == .internal
+                        ? "clock.fill"
+                        : "clock.arrow.2.circlepath")
+                        .foregroundColor(.secondary)
+                    Text(viewModel.state.clockSource == .internal ? "INT" : "EXT")
+                        .font(.system(.caption, design: .monospaced))
+                }
             }
+            .buttonStyle(.plain)
+            .help("Clock source: click to toggle Internal/External")
 
             Spacer()
 
@@ -54,11 +61,11 @@ struct TransportBar: View {
 
             // Panic button
             Button(action: { viewModel.panic() }) {
-                Image(systemName: "exclamationmark.triangle.fill")
-                    .foregroundColor(.orange)
+                Image(systemName: "xmark.octagon")
+                    .foregroundColor(.secondary)
             }
             .buttonStyle(.plain)
-            .help("Panic: All Notes Off")
+            .help("Panic — Send All Notes Off on all channels (use if notes get stuck)")
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
