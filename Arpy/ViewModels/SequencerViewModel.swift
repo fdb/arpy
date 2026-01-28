@@ -74,17 +74,13 @@ class SequencerViewModel: ObservableObject {
     private func handleMIDIInput(_ message: MIDIMessage) {
         switch message {
         case .noteOn(let channel, let note, let velocity) where channel == 10 && Self.padNoteRange.contains(note):
-            let padId = note - 36 + 1
-            padPressed(padId)
-        case .noteOff(let channel, let note) where channel == 10 && Self.padNoteRange.contains(note):
-            let padId = note - 36 + 1
-            padReleased(padId)
-        case .noteOn(let channel, let note, _) where channel == 10:
-            // Note on with velocity 0 = note off
-            if Self.padNoteRange.contains(note) {
-                let padId = note - 36 + 1
-                padReleased(padId)
+            if velocity > 0 {
+                padPressed(note)
+            } else {
+                padReleased(note)
             }
+        case .noteOff(let channel, let note) where channel == 10 && Self.padNoteRange.contains(note):
+            padReleased(note)
         case .controlChange(let channel, let cc, let value) where channel == 1 && Self.knobCCRange.contains(cc):
             let knobId = cc - 70 + 1
             let normalized = Double(value) / 127.0
@@ -138,27 +134,29 @@ class SequencerViewModel: ObservableObject {
 
     // MARK: - Input Handlers
 
-    func padPressed(_ padId: Int) {
-        switch padId {
-        case 1...4:
-            state.selectedTrackId = padId
-            syncKnobsFromState()
-        case 5:
-            togglePlayStop()
-        case 6:
-            tapTempo()
-        case 7:
-            toggleMute()
-        case 8:
+    /// Handle pad press by MIDI note number (36-43).
+    func padPressed(_ note: Int) {
+        switch note {
+        case 36: // Pad 1: Shift
             state.isMelodicShiftActive = true
+            syncKnobsFromState()
+        case 37: // Pad 2: Play/Pause
+            togglePlayStop()
+        case 38: // Pad 3: Mute
+            toggleMute()
+        case 39: // Pad 4: Tap Tempo
+            tapTempo()
+        case 40...43: // Pads 5-8: Track select
+            let trackId = note - 40 + 1
+            state.selectedTrackId = trackId
             syncKnobsFromState()
         default:
             break
         }
     }
 
-    func padReleased(_ padId: Int) {
-        if padId == 8 {
+    func padReleased(_ note: Int) {
+        if note == 36 { // Pad 1: Shift release
             state.isMelodicShiftActive = false
             syncKnobsFromState()
         }
