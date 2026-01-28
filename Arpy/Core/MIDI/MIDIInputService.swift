@@ -82,6 +82,8 @@ class MIDIInputService: ObservableObject {
                     onMessage?(.noteOn(channel: channel, note: data1, velocity: data2))
                 case 0x90, 0x80:
                     onMessage?(.noteOff(channel: channel, note: data1))
+                case 0xB0:
+                    onMessage?(.controlChange(channel: channel, cc: data1, value: data2))
                 default:
                     break
                 }

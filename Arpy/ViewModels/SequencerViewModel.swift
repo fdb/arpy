@@ -51,6 +51,47 @@ class SequencerViewModel: ObservableObject {
         } catch {
             print("MIDI output setup failed: \(error)")
         }
+
+        do {
+            try midiInput.setup()
+        } catch {
+            print("MIDI input setup failed: \(error)")
+        }
+
+        midiInput.onMessage = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.handleMIDIInput(message)
+            }
+        }
+    }
+
+    // MARK: - MIDI Input Handling
+
+    // LPD8 MKII Default Program 1 mapping
+    private static let padNoteRange = 36...43  // Notes 36-43 for pads 1-8
+    private static let knobCCRange = 70...77   // CC 70-77 for knobs 1-8
+
+    private func handleMIDIInput(_ message: MIDIMessage) {
+        switch message {
+        case .noteOn(let channel, let note, let velocity) where channel == 10 && Self.padNoteRange.contains(note):
+            let padId = note - 36 + 1
+            padPressed(padId)
+        case .noteOff(let channel, let note) where channel == 10 && Self.padNoteRange.contains(note):
+            let padId = note - 36 + 1
+            padReleased(padId)
+        case .noteOn(let channel, let note, _) where channel == 10:
+            // Note on with velocity 0 = note off
+            if Self.padNoteRange.contains(note) {
+                let padId = note - 36 + 1
+                padReleased(padId)
+            }
+        case .controlChange(let channel, let cc, let value) where channel == 1 && Self.knobCCRange.contains(cc):
+            let knobId = cc - 70 + 1
+            let normalized = Double(value) / 127.0
+            knobChanged(knobId, value: normalized)
+        default:
+            break
+        }
     }
 
     // MARK: - Computed Properties

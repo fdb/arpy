@@ -4,6 +4,7 @@ import Foundation
 enum MIDIMessage: Equatable {
     case noteOn(channel: Int, note: Int, velocity: Int)
     case noteOff(channel: Int, note: Int)
+    case controlChange(channel: Int, cc: Int, value: Int)
     case clock
     case start
     case stop
@@ -23,6 +24,12 @@ enum MIDIMessage: Equatable {
                 UInt8(0x80 | ((channel - 1) & 0x0F)),
                 UInt8(note & 0x7F),
                 0
+            ]
+        case .controlChange(let channel, let cc, let value):
+            return [
+                UInt8(0xB0 | ((channel - 1) & 0x0F)),
+                UInt8(cc & 0x7F),
+                UInt8(value & 0x7F)
             ]
         case .clock:    return [0xF8]
         case .start:    return [0xFA]

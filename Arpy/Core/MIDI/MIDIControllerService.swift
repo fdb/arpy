@@ -1,5 +1,8 @@
 import Foundation
 import CoreMIDI
+import os
+
+private let midiLog = Logger(subsystem: Bundle.main.bundleIdentifier ?? "Arpy", category: "MIDI")
 
 /// Service for receiving input from the AKAI LPD8 MKII controller.
 class MIDIControllerService: ObservableObject {
@@ -17,7 +20,7 @@ class MIDIControllerService: ObservableObject {
 
     // LPD8 MKII Default Program 1 mapping
     private static let padNoteRange = 36...43  // Notes 36-43 for pads 1-8
-    private static let knobCCRange = 1...8     // CC 1-8 for knobs 1-8
+    private static let knobCCRange = 70...77   // CC 70-77 for knobs 1-8
 
     func setup() throws {
         var status = MIDIClientCreateWithBlock("Arpy Controller" as CFString, &client) { [weak self] notification in
@@ -49,23 +52,37 @@ class MIDIControllerService: ObservableObject {
     private func connectAllSources() {
         let count = MIDIGetNumberOfSources()
         var found = false
+        midiLog.info("Scanning MIDI sources (\(count) available)")
         for i in 0..<count {
             let source = MIDIGetSource(i)
-            MIDIPortConnectSource(inputPort, source, nil)
+            let status = MIDIPortConnectSource(inputPort, source, nil)
 
             var name: Unmanaged<CFString>?
             MIDIObjectGetStringProperty(source, kMIDIPropertyName, &name)
-            if let n = name?.takeRetainedValue() as? String,
-               n.lowercased().contains("lpd8") {
+            let sourceName = (name?.takeRetainedValue() as? String) ?? "Unknown"
+
+            if status == noErr {
+                midiLog.info("Connected to MIDI source: \(sourceName)")
+            } else {
+                midiLog.error("Failed to connect to MIDI source: \(sourceName) (status \(status))")
+            }
+
+            if sourceName.lowercased().contains("lpd8") {
                 found = true
+                midiLog.info("Found LPD8 device: \(sourceName)")
             }
         }
+        let wasConnected = isConnected
         DispatchQueue.main.async {
             self.isConnected = found
+        }
+        if found != wasConnected {
+            midiLog.info("LPD8 \(found ? "connected" : "disconnected")")
         }
     }
 
     private func reconnect() {
+        midiLog.info("MIDI setup changed, reconnecting")
         connectAllSources()
     }
 
@@ -80,24 +97,41 @@ class MIDIControllerService: ObservableObject {
             let data2 = Int(word & 0x7F)
 
             let messageType = statusByte & 0xF0
+            let channel = statusByte & 0x0F
 
-            switch messageType {
-            case 0x90 where data2 > 0: // Note On
-                if Self.padNoteRange.contains(data1) {
-                    let padId = data1 - 36 + 1  // Convert to 1-8
-                    DispatchQueue.main.async { self.onPadPress?(padId, data2) }
-                }
-            case 0x90, 0x80: // Note Off
+            let ch = Int(channel) + 1  // 1-based for logging
+
+            switch (messageType, channel) {
+            case (0x90, 9) where data2 > 0: // Note On, channel 10
                 if Self.padNoteRange.contains(data1) {
                     let padId = data1 - 36 + 1
+                    midiLog.debug("✓ Pad \(padId) ON  (note \(data1), vel \(data2), ch \(ch))")
+                    DispatchQueue.main.async { self.onPadPress?(padId, data2) }
+                } else {
+                    midiLog.debug("✗ Ignored Note On (note \(data1), vel \(data2), ch \(ch)) — note not in pad range 36-43")
+                }
+            case (0x90, 9), (0x80, 9): // Note Off, channel 10
+                if Self.padNoteRange.contains(data1) {
+                    let padId = data1 - 36 + 1
+                    midiLog.debug("✓ Pad \(padId) OFF (note \(data1), ch \(ch))")
                     DispatchQueue.main.async { self.onPadRelease?(padId) }
+                } else {
+                    midiLog.debug("✗ Ignored Note Off (note \(data1), ch \(ch)) — note not in pad range 36-43")
                 }
-            case 0xB0: // CC
+            case (0xB0, 0): // CC, channel 1
                 if Self.knobCCRange.contains(data1) {
-                    DispatchQueue.main.async { self.onKnobChange?(data1, data2) }
+                    let knobId = data1 - 70 + 1
+                    midiLog.debug("✓ Knob \(knobId) = \(data2) (CC \(data1), ch \(ch))")
+                    DispatchQueue.main.async { self.onKnobChange?(knobId, data2) }
+                } else {
+                    midiLog.debug("✗ Ignored CC (CC \(data1), val \(data2), ch \(ch)) — CC not in knob range 70-77")
                 }
+            case (0x90, _), (0x80, _):
+                midiLog.debug("✗ Ignored Note (note \(data1), vel \(data2), ch \(ch)) — wrong channel (expected 10)")
+            case (0xB0, _):
+                midiLog.debug("✗ Ignored CC (CC \(data1), val \(data2), ch \(ch)) — wrong channel (expected 1)")
             default:
-                break
+                midiLog.debug("✗ Ignored MIDI (status 0x\(String(statusByte, radix: 16)), d1 \(data1), d2 \(data2))")
             }
 
             packet = MIDIEventPacketNext(&packet).pointee
